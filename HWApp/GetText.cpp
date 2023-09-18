@@ -11,7 +11,7 @@ using namespace std;
 
 class GetCSV {
 public:
-	string get(char value)
+	map<char, vector<string>> get()
 	{
 		setlocale(LC_ALL, "Russian");
 		string fname = "city.csv";
@@ -33,16 +33,16 @@ public:
 			cout << "Could not open the file\n";
 
 
-		auto rng = default_random_engine{ random_device{}()};
-		shuffle(begin(cities[value]), end(cities[value]), rng);
-
-		return cities[value][0];
+//		auto rng = default_random_engine{ random_device{}()};
+//		shuffle(begin(cities[value]), end(cities[value]), rng);
+//		string c = cities[value][cities[value].size() - 1];
+		return cities;
 	}
 };
 
 
 int main() {
-	GetCSV gcsv;
-
-	cout << gcsv.get('À');
+	GetCSV cities;
+	
+	
 }
